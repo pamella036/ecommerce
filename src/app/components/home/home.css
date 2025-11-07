@@ -1,0 +1,84 @@
+.container-fluid{
+  font-family: poppins, sans-serif;
+}
+
+.navbar {
+    /* Use !important apenas se a cor do Bootstrap estiver sobrepondo */
+    background-color: #35402D !important; 
+}
+
+.titulo-categoria {
+display: flex;
+justify-content: center;
+color: #224021;
+font-weight: bolder;
+}
+
+.cards-planta {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.cards-planta .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border-style: none;
+}
+
+.card img {
+  margin: 10px 10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+
+body {
+  overflow-x: hidden;
+}
+
+.precos {
+margin-bottom: 16px;
+font-size: 18px;
+font-weight: bold;
+color: #6B8C49;
+}
+
+.precos .preco-promocao {
+  color: #ff5722;
+}
+
+.footer {
+  background-color: #35402D;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-family: poppins, sans-serif;
+}
+
+.etiqueta-promocao {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ff5722;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    transform: rotate(5deg);
+}
+
+.mensagemVazia {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.5em;
+    color: #c43e00;
+}

@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand">Botanica Express</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Carrinho</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sobre nós</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Pesquisar"
+          aria-label="Search"
+          [(ngModel)]="termoBusca" name="termoBusca"  (ngModelChange)="aplicarFiltros()"
+        />
+        <button class="btn btn-outline-success" type="submit" (click)="aplicarFiltros">Enviar</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="conteiner">
+  <div *ngIf="tipoPlanta.length === 0" class="mensagemVazia">
+    <h4>Nenhuma Planta encontrada</h4>
+  </div>
+
+  <div *ngFor="let categoria of categorias" class="categoria-group">
+    <h2 class="titulo-categoria">{{ categoria }}</h2>
+
+    <div class="cards-planta">
+      <div
+        class="card"
+        style="width: 18rem"
+        *ngFor="let planta of plantasAgrupadas[categoria]"
+        ngClass="{'promocao-destaque': planta.emPromocao}"
+      >
+        <img [src]="planta.imgURL" class="card-img-top" alt="{{ planta.nome }}" />
+        <div class="card-body">
+          <h5 class="title">{{ planta.nome }}</h5>
+          <p class="categoria">Categoria: {{ planta.categoria }}</p>
+          <div class="precos">
+            <span [ngClass]="{ 'preco-promocao': planta.emPromocao }">
+              R$ {{ planta.preco.toFixed(2) }}
+              <span *ngIf="planta.emPromocao">Promoção!</span>
+            </span>
+          
+          </div>
+          <a href="#" class="btn btn-success">Comprar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">Todos os direiros autorais reservados.</footer>
+</div>
