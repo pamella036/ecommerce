@@ -30,16 +30,15 @@
           type="search"
           placeholder="Pesquisar"
           aria-label="Search"
-          [(ngModel)]="termoBusca" name="termoBusca"  (ngModelChange)="aplicarFiltros()"
         />
-        <button class="btn btn-outline-success" type="submit" (click)="aplicarFiltros">Enviar</button>
+        <button class="btn btn-outline-success" type="submit">Enviar</button>
       </form>
     </div>
   </div>
 </nav>
 
 <div class="conteiner">
-  <div *ngIf="tipoPlanta.length === 0" class="mensagemVazia">
+  <div *ngIf="tipoPlanta.length === 0" class="alert alert-warning text-center">
     <h4>Nenhuma Planta encontrada</h4>
   </div>
 
@@ -72,3 +71,5 @@
 
   <footer class="footer">Todos os direiros autorais reservados.</footer>
 </div>
+
+<!-- Ainda quero adicionar mais coisas no ecommerce: deixar os botões funcionai, o pesquisar funcional e adiconar as paginas de carrinho e sobre nós -->
